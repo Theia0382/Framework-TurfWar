@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 45233837}
   - component: {fileID: 45233838}
   m_Layer: 0
-  m_Name: Square (8)
+  m_Name: Turf 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 284635439}
   - component: {fileID: 284635440}
   m_Layer: 0
-  m_Name: Square (17)
+  m_Name: Turf 18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 374733760}
   - component: {fileID: 374733761}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Turf 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 393471796}
   - component: {fileID: 393471797}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Timerboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 447675988}
   - component: {fileID: 447675989}
   m_Layer: 0
-  m_Name: Square (10)
+  m_Name: Turf 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 621951223}
   - component: {fileID: 621951224}
   m_Layer: 0
-  m_Name: Square (18)
+  m_Name: Turf 19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 668061378}
   - component: {fileID: 668061379}
   m_Layer: 0
-  m_Name: Square (11)
+  m_Name: Turf 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1424,7 @@ GameObject:
   - component: {fileID: 996146374}
   - component: {fileID: 996146375}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Turf 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 1002319557}
   - component: {fileID: 1002319558}
   m_Layer: 0
-  m_Name: Square (9)
+  m_Name: Turf 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,7 @@ GameObject:
   - component: {fileID: 1008158011}
   - component: {fileID: 1008158012}
   m_Layer: 0
-  m_Name: Square (6)
+  m_Name: Turf 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1670,7 +1670,7 @@ GameObject:
   - component: {fileID: 1014192230}
   - component: {fileID: 1014192231}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Turf 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 1108705855}
   - component: {fileID: 1108705856}
   m_Layer: 0
-  m_Name: Square (14)
+  m_Name: Turf 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1834,7 +1834,7 @@ GameObject:
   - component: {fileID: 1237241946}
   - component: {fileID: 1237241947}
   m_Layer: 0
-  m_Name: Square (16)
+  m_Name: Turf 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,7 +2026,7 @@ GameObject:
   - component: {fileID: 1365812583}
   - component: {fileID: 1365812584}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: Turf 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2108,7 +2108,7 @@ GameObject:
   - component: {fileID: 1383907136}
   - component: {fileID: 1383907137}
   m_Layer: 0
-  m_Name: Square (13)
+  m_Name: Turf 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 1492933520}
   - component: {fileID: 1492933521}
   m_Layer: 0
-  m_Name: Square (7)
+  m_Name: Turf 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2422,7 +2422,7 @@ GameObject:
   - component: {fileID: 1584835790}
   - component: {fileID: 1584835791}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Left Scoreboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2586,7 +2586,7 @@ GameObject:
   - component: {fileID: 1622560015}
   - component: {fileID: 1622560016}
   m_Layer: 0
-  m_Name: Square (19)
+  m_Name: Turf 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,7 +2668,7 @@ GameObject:
   - component: {fileID: 1626149792}
   - component: {fileID: 1626149793}
   m_Layer: 0
-  m_Name: Square (5)
+  m_Name: Turf 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,7 +2904,7 @@ GameObject:
   - component: {fileID: 1946601854}
   - component: {fileID: 1946601855}
   m_Layer: 0
-  m_Name: Square (12)
+  m_Name: Turf 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2986,7 +2986,7 @@ GameObject:
   - component: {fileID: 2016337262}
   - component: {fileID: 2016337263}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Turf 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3306,7 +3306,7 @@ GameObject:
   - component: {fileID: 2055566553}
   - component: {fileID: 2055566554}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Right Scoreboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3388,7 +3388,7 @@ GameObject:
   - component: {fileID: 2094833593}
   - component: {fileID: 2094833594}
   m_Layer: 0
-  m_Name: Square (15)
+  m_Name: Turf 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
