@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int gridXMin = 0;
-    public int gridXMax = 5;
-    public int gridYMin = 0;
-    public int gridYMax = 4;
-    public float gridOffsetX = -5f;
-    public float gridOffsetY = -4.5f;
-    public float travelPerGridX = 2f;
-    public float travelPerGridY = 2f;
+    StageInfo stageInfo;
 
-    public int startGridX = 0;
-    public int startGridY = 0;
+    public int startGridX;
+    public int startGridY;
 
-    public string upKey = "w";
-    public string downKey = "s";
-    public string leftKey = "a";
-    public string rightKey = "d";
+    public string upKey;
+    public string downKey;
+    public string leftKey;
+    public string rightKey;
 
-    public float movingTime = 1.0f;
+    public float movingTime;
+
+    public int playerNumber;
 
     int gridX;
     int gridY;
@@ -41,53 +36,59 @@ public class PlayerMovement : MonoBehaviour
 
     void Start( )
     {
+        stageInfo = GameObject.Find( "Stage" ).GetComponent<StageInfo>( );
+
         gridX = startGridX;
         gridY = startGridY;
         targetGridX = startGridX;
         targetGridY = startGridY;
+        
+        float X = startGridX * stageInfo.travelPerGridX + stageInfo.gridOffsetX;
+        float Y = startGridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
+        transform.position = new Vector2( X, Y );
 
         moving = false;
     }
 
     void Update( )
     {
-        if( Input.GetKey( upKey ) && gridY < gridYMax && !moving )
+        if ( Input.GetKey( upKey ) && gridY < stageInfo.gridYMax && !moving )
         {
             Debug.Log( "Move Up" );
             targetGridY += 1;
         }
-        else if( Input.GetKey( downKey ) && gridY > gridYMin && !moving )
+        else if ( Input.GetKey( downKey ) && gridY > stageInfo.gridYMin && !moving )
         {
             Debug.Log( "Move Down" );
             targetGridY += -1;
         }
-        else if( Input.GetKey( leftKey ) && gridX > gridXMin && !moving )
+        else if ( Input.GetKey( leftKey ) && gridX > stageInfo.gridXMin && !moving )
         {
             Debug.Log( "Move Left" );
             targetGridX += -1;
         }
-        else if( Input.GetKey( rightKey ) && gridX < gridXMax && !moving )
+        else if ( Input.GetKey( rightKey ) && gridX < stageInfo.gridXMax && !moving )
         {
             Debug.Log( "Move Right");
             targetGridX += 1;
         }
 
-        if( gridX != targetGridX || gridY != targetGridY )
+        if ( gridX != targetGridX || gridY != targetGridY )
         {
-            if( !moving )
+            if ( !moving )
             {
                 startX = transform.position.x;
                 startY = transform.position.y;
-                targetX = targetGridX * travelPerGridX + gridOffsetX;
-                targetY = targetGridY * travelPerGridY + gridOffsetY;
+                targetX = targetGridX * stageInfo.travelPerGridX + stageInfo.gridOffsetX;
+                targetY = targetGridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
                 travelX = targetX - startX;
                 travelY = targetY - startY;
-                timer = 0f;
-                progress = 0f;
+                timer = 0.0f;
+                progress = 0.0f;
                 moving = true;
                 Debug.Log( "Moving" );
             }
-            else if( progress < 1 )
+            else if ( progress < 1 )
             {
                 timer += Time.deltaTime;
                 progress = timer / movingTime;
@@ -99,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log( "End Moving");
                 moving = false;
+                stageInfo.objectStatus[ gridX + targetGridX, gridY + targetGridY ] = playerNumber;
+                Debug.Log( $"Line( {gridX + targetGridX}, {gridY + targetGridY} ) : {playerNumber}P" );
                 gridX = targetGridX;
                 gridY = targetGridY;
             }
