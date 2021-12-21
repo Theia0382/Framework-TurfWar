@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class StageInfo : MonoBehaviour
 {
-    PlayerMovement player1;
-    PlayerMovement player2;
     Text player1ScoreText;
     Text player2ScoreText;
+    PlayerEvent player1Event;
+    PlayerEvent player2Event;
 
     public int gridXMin;
     public int gridXMax;
@@ -23,12 +23,12 @@ public class StageInfo : MonoBehaviour
     
     void Start( )
     {
-        player1 = GameObject.Find( "Player1" ).GetComponent<PlayerMovement>( );
-        player2 = GameObject.Find( "Player2" ).GetComponent<PlayerMovement>( );
         player1ScoreText = GameObject.Find( "1P Score" ).GetComponent<Text>( );
         player2ScoreText = GameObject.Find( "2P Score" ).GetComponent<Text>( );
+        player1Event = GameObject.Find( "Player1" ).GetComponent<PlayerEvent>( );
+        player2Event = GameObject.Find( "Player2" ).GetComponent<PlayerEvent>( );
 
-        objectStatus = new int[ ( gridXMax - gridXMin ) * 2 + 1, ( gridYMax - gridXMin ) * 2 + 1 ];
+        objectStatus = new int[ ( gridXMax - gridXMin + 1 ) * 2 - 1, ( gridYMax - gridYMin + 1 ) * 2 - 1 ];
         for ( int x = 0; x < objectStatus.GetLength( 0 ); x++ )
         {
             for ( int y = 0; y < objectStatus.GetLength( 1 ); y++ )
@@ -50,11 +50,11 @@ public class StageInfo : MonoBehaviour
                 {
                     if ( y % 2 == 1)
                     {
-                        if( objectStatus[ x, y ] == player1.playerNumber )
+                        if( objectStatus[ x, y ] == player1Event.playerNumber )
                         {
                             player1Score += 1;
                         }
-                        if( objectStatus[ x, y ] == player2.playerNumber )
+                        if( objectStatus[ x, y ] == player2Event.playerNumber )
                         {
                             player2Score += 1;
                         }

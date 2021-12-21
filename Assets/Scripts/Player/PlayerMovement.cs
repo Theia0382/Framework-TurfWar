@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    PlayerEvent playerEvent;
     StageInfo stageInfo;
 
     public int startGridX;
@@ -15,13 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public string rightKey;
 
     public float movingTime;
-
-    public int playerNumber;
-
-    int gridX;
-    int gridY;
-    int targetGridX;
-    int targetGridY;
+    
+    public int gridX;
+    public int gridY;
+    public int targetGridX;
+    public int targetGridY;
 
     float startX;
     float startY;
@@ -30,12 +29,14 @@ public class PlayerMovement : MonoBehaviour
     float travelX;
     float travelY;
 
+    int playerNumber;
     bool moving;
-    float timer;
+    float movingTimer;
     float progress;
 
     void Start( )
     {
+        playerEvent = GetComponent<PlayerEvent>( );
         stageInfo = GameObject.Find( "Stage" ).GetComponent<StageInfo>( );
 
         gridX = startGridX;
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         float Y = startGridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
         transform.position = new Vector2( X, Y );
 
+        playerNumber = playerEvent.playerNumber;
         moving = false;
     }
 
@@ -54,22 +56,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if ( Input.GetKey( upKey ) && gridY < stageInfo.gridYMax && !moving )
         {
-            Debug.Log( "Move Up" );
+            Debug.Log( $"{playerNumber}P Move Up" );
             targetGridY += 1;
         }
         else if ( Input.GetKey( downKey ) && gridY > stageInfo.gridYMin && !moving )
         {
-            Debug.Log( "Move Down" );
+            Debug.Log( $"{playerNumber}P Move Down" );
             targetGridY += -1;
         }
         else if ( Input.GetKey( leftKey ) && gridX > stageInfo.gridXMin && !moving )
         {
-            Debug.Log( "Move Left" );
+            Debug.Log( $"{playerNumber}P Move Left" );
             targetGridX += -1;
         }
         else if ( Input.GetKey( rightKey ) && gridX < stageInfo.gridXMax && !moving )
         {
-            Debug.Log( "Move Right");
+            Debug.Log( $"{playerNumber}P Move Right");
             targetGridX += 1;
         }
 
@@ -83,25 +85,25 @@ public class PlayerMovement : MonoBehaviour
                 targetY = targetGridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
                 travelX = targetX - startX;
                 travelY = targetY - startY;
-                timer = 0.0f;
+                movingTimer = 0.0f;
                 progress = 0.0f;
                 moving = true;
-                Debug.Log( "Moving" );
+                Debug.Log( $"{playerNumber}P Moving" );
             }
             else if ( progress < 1 )
             {
-                timer += Time.deltaTime;
-                progress = timer / movingTime;
+                movingTimer += Time.deltaTime;
+                progress = movingTimer / movingTime;
                 float X = startX + ( travelX * progress );
                 float Y = startY + ( travelY * progress );
                 transform.position = new Vector2( X, Y );
             }
             else
             {
-                Debug.Log( "End Moving");
+                Debug.Log( $"{playerNumber}P End Moving" );
                 moving = false;
-                stageInfo.objectStatus[ gridX + targetGridX, gridY + targetGridY ] = playerNumber;
-                Debug.Log( $"Line( {gridX + targetGridX}, {gridY + targetGridY} ) : {playerNumber}P" );
+                playerEvent.getLine( );
+                playerEvent.itemCheck( );
                 gridX = targetGridX;
                 gridY = targetGridY;
             }

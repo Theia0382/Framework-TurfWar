@@ -6,8 +6,8 @@ public class TurfBehavior : MonoBehaviour
 {
     StageInfo stageInfo;
     SpriteRenderer spriteRenderer;
-    PlayerMovement player1;
-    PlayerMovement player2;
+    PlayerEvent player1Event;
+    PlayerEvent player2Event;
 
     public int myX;
     public int myY;
@@ -15,21 +15,21 @@ public class TurfBehavior : MonoBehaviour
     void Start( )
     {
         stageInfo = GameObject.Find( "Stage" ).GetComponent<StageInfo>( );
-        player1 = GameObject.Find( "Player1" ).GetComponent<PlayerMovement>( );
-        player2 = GameObject.Find( "Player2" ).GetComponent<PlayerMovement>( );
         spriteRenderer = GetComponent<SpriteRenderer>( );
+        player1Event = GameObject.Find( "Player1" ).GetComponent<PlayerEvent>( );
+        player2Event = GameObject.Find( "Player2" ).GetComponent<PlayerEvent>( );
     }
 
     void Update( )
     {
-        if ( stageInfo.objectStatus[ myX - 1, myY ] == player1.playerNumber && stageInfo.objectStatus[ myX + 1, myY ] == player1.playerNumber && stageInfo.objectStatus[ myX, myY + 1 ] == player1.playerNumber && stageInfo.objectStatus[ myX, myY - 1 ] == player1.playerNumber )
+        if ( stageInfo.objectStatus[ myX - 1, myY ] == player1Event.playerNumber && stageInfo.objectStatus[ myX + 1, myY ] == player1Event.playerNumber && stageInfo.objectStatus[ myX, myY + 1 ] == player1Event.playerNumber && stageInfo.objectStatus[ myX, myY - 1 ] == player1Event.playerNumber )
         {
-            stageInfo.objectStatus[ myX, myY ] = player1.playerNumber;
+            stageInfo.objectStatus[ myX, myY ] = player1Event.playerNumber;
             spriteRenderer.color = new Color( 1.0f, 0.0f, 0.0f, 1.0f );
         }
-        else if ( stageInfo.objectStatus[ myX - 1, myY ] == player2.playerNumber && stageInfo.objectStatus[ myX + 1, myY ] == player2.playerNumber && stageInfo.objectStatus[ myX, myY + 1 ] == player2.playerNumber && stageInfo.objectStatus[ myX, myY - 1 ] == player2.playerNumber )
+        else if ( stageInfo.objectStatus[ myX - 1, myY ] == player2Event.playerNumber && stageInfo.objectStatus[ myX + 1, myY ] == player2Event.playerNumber && stageInfo.objectStatus[ myX, myY + 1 ] == player2Event.playerNumber && stageInfo.objectStatus[ myX, myY - 1 ] == player2Event.playerNumber )
         {
-            stageInfo.objectStatus[ myX, myY ] = player2.playerNumber;
+            stageInfo.objectStatus[ myX, myY ] = player2Event.playerNumber;
             spriteRenderer.color = new Color( 0.0f, 0.0f, 1.0f, 1.0f );
         }
         else
