@@ -33,9 +33,4 @@ public class PlayerEvent : MonoBehaviour
         itemEvent = GameObject.Find( "Stage" ).GetComponent<ItemEvent>( );
         boostEvent = GetComponent<BoostEvent>( );
     }
-
-    void Update( )
-    {
-        
-    }
 }

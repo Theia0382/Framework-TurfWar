@@ -48,6 +48,8 @@ public class ItemEvent : MonoBehaviour
             boost1Behavior.myY = clone1GridY;
             boost2Behavior.myX = clone2GridX;
             boost2Behavior.myY = clone2GridY;
+            Boost1.transform.localScale = new Vector2( 0.8f, 0.8f );
+            Boost2.transform.localScale = new Vector2( 0.8f, 0.8f );
             itemTimer = 0.0f;
             Debug.Log( "Create Boost" );
         }

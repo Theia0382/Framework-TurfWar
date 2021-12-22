@@ -23,9 +23,9 @@ public class BoostItemBehavior : MonoBehaviour
     {
         destroyTimer += Time.deltaTime;
 
-        if ( stageInfo.objectStatus[ myX * 2, myY * 2 ] == 0 || destroyTimer > itemEvent.itemDestroyTime )
+        if ( stageInfo.objectStatus[ ( myX - stageInfo.gridXMin ) * 2, ( myY - stageInfo.gridYMin ) * 2 ] == 0 || destroyTimer > itemEvent.itemDestroyTime )
         {
-            stageInfo.objectStatus[ myX * 2, myY * 2 ] = 0;
+            stageInfo.objectStatus[ ( myX - stageInfo.gridXMin ) * 2, ( myY - stageInfo.gridYMin ) * 2 ] = 0;
             Destroy( gameObject );
         }
     }
