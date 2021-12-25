@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Blink : MonoBehaviour
+public class AlphaForImage : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    Image image;
 
-    bool isFade;
-    bool isBlink;
+    public bool isFade;
+    public bool isBlink;
     float timer;
     float blinkTimer;
     float progress;
@@ -49,16 +50,16 @@ public class Blink : MonoBehaviour
         hide = _hide;
     }
 
-    void modifyAlpha( float alpha )
+    public void modifyAlpha( float alpha )
     {
-        Color color = spriteRenderer.color;
+        Color color = image.color;
         color.a = alpha;
-        spriteRenderer.color = color;
+        image.color = color;
     }
 
     void Start( )
     {
-        spriteRenderer = GetComponent<SpriteRenderer>( );
+        image = GetComponent<Image>( );
     }
 
     void Update( )

@@ -7,6 +7,7 @@ public class BoostEvent : MonoBehaviour
     PlayerMovement playerMovement;
     PlayerEvent playerEvent;
     ItemEvent itemEvent;
+    AlphaForImage boostIndecator;
 
     public bool boost;
     float boostTimer;
@@ -14,10 +15,17 @@ public class BoostEvent : MonoBehaviour
 
     int playerNumber;
 
+    bool indecatorBlink;
+
     public void getBoost( )
     {
-        boost = true;
+        if ( !boost )
+        {
+            boost = true;
+            boostIndecator.fade( 0.0f, 1.0f, 0.3f );
+        }
         boostTimer = 0.0f;
+        indecatorBlink = false;
         Debug.Log( $"{playerNumber}P Boost" );
     }
 
@@ -25,13 +33,15 @@ public class BoostEvent : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>( );
         playerEvent = GetComponent<PlayerEvent>( );
-        itemEvent = GameObject.Find( "Stage" ).GetComponent<ItemEvent>( );
-
         playerNumber = playerEvent.playerNumber;
-        playerMovingTime = playerMovement.movingTime;
+        itemEvent = GameObject.Find( "Stage" ).GetComponent<ItemEvent>( );
+        boostIndecator = GameObject.Find( $"{playerNumber}P Boost Indecator" ).GetComponent<AlphaForImage>( );
+
 
         boost = false;
         boostTimer = 0.0f;
+        playerMovingTime = playerMovement.movingTime;
+        boostIndecator.modifyAlpha( 0.0f );
     }
 
     void Update( )
@@ -49,6 +59,19 @@ public class BoostEvent : MonoBehaviour
                 boost = false;
                 playerMovement.movingTime = playerMovingTime;
                 Debug.Log( $"{playerNumber}P Boost End" );
+            }
+
+            if ( !indecatorBlink )
+            {
+                if ( boostTimer > itemEvent.boostTime - 1.0f )
+                {
+                    boostIndecator.blink( 1.0f, 0.2f, 1.0f, 0.2f, true );
+                    indecatorBlink = true;
+                }
+                else
+                {
+                    boostIndecator.isBlink = false;
+                }
             }
         }
     }

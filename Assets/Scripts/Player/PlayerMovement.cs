@@ -72,13 +72,13 @@ public class PlayerMovement : MonoBehaviour
             else if ( Input.GetKey( downKey ) && gridY > stageInfo.gridYMin && !moving )
             {
                 Debug.Log( $"{playerNumber}P Move Down" );
-                targetGridY += -1;
+                targetGridY -= 1;
                 transform.rotation = Quaternion.Euler( 0.0f, 0.0f, 180.0f );
             }
             else if ( Input.GetKey( leftKey ) && gridX > stageInfo.gridXMin && !moving )
             {
                 Debug.Log( $"{playerNumber}P Move Left" );
-                targetGridX += -1;
+                targetGridX -= 1;
                 transform.rotation = Quaternion.Euler( 0.0f, 0.0f, 90.0f );
             }
             else if ( Input.GetKey( rightKey ) && gridX < stageInfo.gridXMax && !moving )

@@ -1257,6 +1257,7 @@ GameObject:
   - component: {fileID: 404975619}
   - component: {fileID: 404975621}
   - component: {fileID: 404975620}
+  - component: {fileID: 404975622}
   m_Layer: 5
   m_Name: 1P Life 3
   m_TagString: Untagged
@@ -1321,6 +1322,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404975618}
   m_CullTransparentMesh: 1
+--- !u!114 &404975622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404975618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &417468111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,8 +1371,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 485.89}
-  m_SizeDelta: {x: 425.0929, y: 108.22}
+  m_AnchoredPosition: {x: 0, y: 485}
+  m_SizeDelta: {x: 450, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417468113
 MonoBehaviour:
@@ -1771,6 +1786,7 @@ GameObject:
   - component: {fileID: 480707582}
   - component: {fileID: 480707584}
   - component: {fileID: 480707583}
+  - component: {fileID: 480707585}
   m_Layer: 5
   m_Name: 2P Life 3
   m_TagString: Untagged
@@ -1835,6 +1851,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480707581}
   m_CullTransparentMesh: 1
+--- !u!114 &480707585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480707581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,6 +2228,7 @@ GameObject:
   - component: {fileID: 612448561}
   - component: {fileID: 612448563}
   - component: {fileID: 612448562}
+  - component: {fileID: 612448564}
   m_Layer: 5
   m_Name: 1P Boost Indecator
   m_TagString: Untagged
@@ -2262,6 +2293,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612448560}
   m_CullTransparentMesh: 1
+--- !u!114 &612448564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612448560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &621951222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,6 +4031,7 @@ GameObject:
   - component: {fileID: 1178710472}
   - component: {fileID: 1178710474}
   - component: {fileID: 1178710473}
+  - component: {fileID: 1178710475}
   m_Layer: 5
   m_Name: 2P Boost Indecator
   m_TagString: Untagged
@@ -4050,6 +4096,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178710471}
   m_CullTransparentMesh: 1
+--- !u!114 &1178710475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178710471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1215300091
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4315,7 @@ GameObject:
   - component: {fileID: 1251103043}
   - component: {fileID: 1251103045}
   - component: {fileID: 1251103044}
+  - component: {fileID: 1251103046}
   m_Layer: 5
   m_Name: 2P Life 1
   m_TagString: Untagged
@@ -4319,6 +4380,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251103042}
   m_CullTransparentMesh: 1
+--- !u!114 &1251103046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251103042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1264072809
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,6 +4405,7 @@ GameObject:
   - component: {fileID: 1264072810}
   - component: {fileID: 1264072812}
   - component: {fileID: 1264072811}
+  - component: {fileID: 1264072813}
   m_Layer: 5
   m_Name: 2P Gun Indecator
   m_TagString: Untagged
@@ -4394,6 +4470,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264072809}
   m_CullTransparentMesh: 1
+--- !u!114 &1264072813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264072809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1271946851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,6 +5552,7 @@ GameObject:
   - component: {fileID: 1497708874}
   - component: {fileID: 1497708876}
   - component: {fileID: 1497708875}
+  - component: {fileID: 1497708877}
   m_Layer: 5
   m_Name: 1P Life 1
   m_TagString: Untagged
@@ -5526,6 +5617,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497708873}
   m_CullTransparentMesh: 1
+--- !u!114 &1497708877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497708873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1504424775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,6 +5674,7 @@ GameObject:
   - component: {fileID: 1578074095}
   - component: {fileID: 1578074097}
   - component: {fileID: 1578074096}
+  - component: {fileID: 1578074098}
   m_Layer: 5
   m_Name: 1P Life 2
   m_TagString: Untagged
@@ -5633,6 +5739,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578074094}
   m_CullTransparentMesh: 1
+--- !u!114 &1578074098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578074094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1580051806
 GameObject:
   m_ObjectHideFlags: 0
@@ -5938,7 +6058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   Maxlife: 3
-  respawnTime: 10
+  respawnTime: 5
   life: 3
 --- !u!114 &1598562858
 MonoBehaviour:
@@ -7066,6 +7186,7 @@ GameObject:
   - component: {fileID: 1770153485}
   - component: {fileID: 1770153487}
   - component: {fileID: 1770153486}
+  - component: {fileID: 1770153488}
   m_Layer: 5
   m_Name: 1P Gun Indecator
   m_TagString: Untagged
@@ -7130,6 +7251,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770153484}
   m_CullTransparentMesh: 1
+--- !u!114 &1770153488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770153484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1789216679
 GameObject:
   m_ObjectHideFlags: 0
@@ -7681,6 +7816,7 @@ GameObject:
   - component: {fileID: 1885966592}
   - component: {fileID: 1885966594}
   - component: {fileID: 1885966593}
+  - component: {fileID: 1885966595}
   m_Layer: 5
   m_Name: 2P Life 2
   m_TagString: Untagged
@@ -7745,6 +7881,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885966591}
   m_CullTransparentMesh: 1
+--- !u!114 &1885966595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885966591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b3caa1ad0ef64db0de3829eb707b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFade: 0
+  isBlink: 0
 --- !u!1 &1902900988
 GameObject:
   m_ObjectHideFlags: 0
@@ -8453,7 +8603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 2
   Maxlife: 3
-  respawnTime: 10
+  respawnTime: 5
   life: 3
 --- !u!114 &2038434672
 MonoBehaviour:
