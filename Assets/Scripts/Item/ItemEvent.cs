@@ -52,16 +52,16 @@ public class ItemEvent : MonoBehaviour
             {
                 GameObject Boost1 = Instantiate( boostPrefab, new Vector3( clone1X, clone1Y, 1 ), Quaternion.identity, transform ) as GameObject;
                 GameObject Boost2 = Instantiate( boostPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
-                ItemBehavior boost1Behavior = Boost1.GetComponent<ItemBehavior>( );
-                ItemBehavior boost2Behavior = Boost2.GetComponent<ItemBehavior>( );
+                ItemBehaviour boost1Behaviour = Boost1.GetComponent<ItemBehaviour>( );
+                ItemBehaviour boost2Behaviour = Boost2.GetComponent<ItemBehaviour>( );
                 Alpha boost1Alpha = Boost1.GetComponent<Alpha>( );
                 Alpha boost2Alpha = Boost2.GetComponent<Alpha>( );
                 stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
                 stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
-                boost1Behavior.myX = clone1GridX;
-                boost1Behavior.myY = clone1GridY;
-                boost2Behavior.myX = clone2GridX;
-                boost2Behavior.myY = clone2GridY;
+                boost1Behaviour.myX = clone1GridX;
+                boost1Behaviour.myY = clone1GridY;
+                boost2Behaviour.myX = clone2GridX;
+                boost2Behaviour.myY = clone2GridY;
                 boost1Alpha.fade( 0.0f, 1.0f, 0.3f );
                 boost2Alpha.fade( 0.0f, 1.0f, 0.3f );
                 Debug.Log( "Create Boost" );
@@ -71,16 +71,16 @@ public class ItemEvent : MonoBehaviour
             {
                 GameObject Gun1 = Instantiate( gunPrefab, new Vector3( clone1X, clone1Y, 1 ), Quaternion.identity, transform ) as GameObject;
                 GameObject Gun2 = Instantiate( gunPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
-                ItemBehavior gun1Behavior = Gun1.GetComponent<ItemBehavior>( );
-                ItemBehavior gun2Behavior = Gun2.GetComponent<ItemBehavior>( );
+                ItemBehaviour gun1Behaviour = Gun1.GetComponent<ItemBehaviour>( );
+                ItemBehaviour gun2Behaviour = Gun2.GetComponent<ItemBehaviour>( );
                 Alpha gun1Alpha = Gun1.GetComponent<Alpha>( );
                 Alpha gun2Alpha = Gun2.GetComponent<Alpha>( );
                 stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
                 stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
-                gun1Behavior.myX = clone1GridX;
-                gun1Behavior.myY = clone1GridY;
-                gun2Behavior.myX = clone2GridX;
-                gun2Behavior.myY = clone2GridY;
+                gun1Behaviour.myX = clone1GridX;
+                gun1Behaviour.myY = clone1GridY;
+                gun2Behaviour.myX = clone2GridX;
+                gun2Behaviour.myY = clone2GridY;
                 gun1Alpha.fade( 0.0f, 1.0f, 0.3f );
                 gun2Alpha.fade( 0.0f, 1.0f, 0.3f );
                 Debug.Log( "Create Gun" );

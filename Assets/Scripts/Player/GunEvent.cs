@@ -59,7 +59,7 @@ public class GunEvent : MonoBehaviour
                 if ( Input.GetKey( gunKey ) && reloadTimer > itemEvent.reloadTime )
                 {
                     GameObject Bullet = Instantiate( bulletPrefab, transform.position, transform.rotation ) as GameObject;
-                    Bullet.GetComponent<BulletBehavior>( ).parentNumber = playerNumber;
+                    Bullet.GetComponent<BulletBehaviour>( ).parentNumber = playerNumber;
                     Debug.Log( $"{playerNumber}P Shoot" );
                     remainBullets -= 1;
                     reloadTimer = 0.0f;
