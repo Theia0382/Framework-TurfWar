@@ -65,7 +65,7 @@ public class PlayerEvent : MonoBehaviour
         }
         else
         {
-            blink.blink( );
+            blink.blink( 1.0f, 0.5f, 1.0f, 0.1f );
         }
     }
 
@@ -146,6 +146,7 @@ public class PlayerEvent : MonoBehaviour
             if ( respawnTimer > respawnTime )
             {
                 life = Maxlife;
+                playerMovement.positionInitialize( );
                 blink.fade( 0.0f, 1.0f );
             }
         }
