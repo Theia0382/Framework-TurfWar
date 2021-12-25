@@ -34,7 +34,7 @@ public class Blink : MonoBehaviour
         targetAlpha = _targetAlpha;
     }
 
-    public void blink( float _targetAlphaHigh = 1.0f, float _targetAlphaLow = 0.0f, float _blinkTime = 2.0f, float _blinkRate = 0.4f, bool _hide = false )
+    public void blink( float _targetAlphaHigh = 1.0f, float _targetAlphaLow = 0.0f, float _blinkTime = 1.0f, float _blinkRate = 0.2f, bool _hide = false )
     {
         isFade = false;
         isBlink = true;
@@ -43,6 +43,7 @@ public class Blink : MonoBehaviour
         progress = 0.0f;
 
         blinkTime = _blinkTime;
+        blinkRate = _blinkRate;
         targetAlphaHigh = _targetAlphaHigh;
         targetAlphaLow = _targetAlphaLow;
         hide = _hide;
@@ -84,7 +85,7 @@ public class Blink : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 blinkTimer += Time.deltaTime;
-                progress = timer / fadeTime;
+                progress = timer / blinkTime;
 
                 if ( blinkTimer < blinkRate / 2 )
                 {

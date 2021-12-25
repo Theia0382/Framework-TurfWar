@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     float movingTimer;
     float progress;
 
-    void positionInitialize( )
+    public void positionInitialize( )
     {
         gridX = startGridX;
         gridY = startGridY;
@@ -121,10 +121,6 @@ public class PlayerMovement : MonoBehaviour
                     gridY = targetGridY;
                 }
             }
-        }
-        else
-        {
-            positionInitialize( );
         }
     }
 }
