@@ -54,12 +54,16 @@ public class ItemEvent : MonoBehaviour
                 GameObject Boost2 = Instantiate( boostPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
                 ItemBehavior boost1Behavior = Boost1.GetComponent<ItemBehavior>( );
                 ItemBehavior boost2Behavior = Boost2.GetComponent<ItemBehavior>( );
+                Alpha boost1Alpha = Gun1.GetComponent<Alpha>( );
+                Alpha boost2Alpha = Gun1.GetComponent<Alpha>( );
                 stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
                 stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
                 boost1Behavior.myX = clone1GridX;
                 boost1Behavior.myY = clone1GridY;
                 boost2Behavior.myX = clone2GridX;
                 boost2Behavior.myY = clone2GridY;
+                boost1Alpha.fade( 0.0f, 1.0f, 0.3f );
+                boost2Alpha.fade( 0.0f, 1.0f, 0.3f );
                 Debug.Log( "Create Boost" );
             }
 
@@ -69,12 +73,16 @@ public class ItemEvent : MonoBehaviour
                 GameObject Gun2 = Instantiate( gunPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
                 ItemBehavior gun1Behavior = Gun1.GetComponent<ItemBehavior>( );
                 ItemBehavior gun2Behavior = Gun2.GetComponent<ItemBehavior>( );
+                Alpha gun1Alpha = Gun1.GetComponent<Alpha>( );
+                Alpha gun2Alpha = Gun1.GetComponent<Alpha>( );
                 stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
                 stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
                 gun1Behavior.myX = clone1GridX;
                 gun1Behavior.myY = clone1GridY;
                 gun2Behavior.myX = clone2GridX;
                 gun2Behavior.myY = clone2GridY;
+                gun1Alpha.fade( 0.0f, 1.0f, 0.3f );
+                gun2Alpha.fade( 0.0f, 1.0f, 0.3f );
                 Debug.Log( "Create Gun" );
             }
 
