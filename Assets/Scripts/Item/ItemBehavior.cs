@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoostItemBehavior : MonoBehaviour
+public class ItemBehavior : MonoBehaviour
 {
     StageInfo stageInfo;
     ItemEvent itemEvent;

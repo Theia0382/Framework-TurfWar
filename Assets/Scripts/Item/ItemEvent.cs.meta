@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - boostPrefab: {fileID: 3821014845670609912, guid: 98b6df4570091e04bbd55dba31d81970, type: 3}
+  - gunPrefab: {fileID: 6391193509815906588, guid: bbd32ac7654be4c4b8c0890dba52d8da, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

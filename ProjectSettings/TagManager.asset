@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Stage
+    uniqueID: 3499099333
+    locked: 0
+  - name: Item
+    uniqueID: 2590427889
+    locked: 0
+  - name: Player
+    uniqueID: 1388126963
+    locked: 0
+  - name: Scoreboard
+    uniqueID: 3614463545
+    locked: 0

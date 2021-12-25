@@ -12,6 +12,14 @@ public class ItemEvent : MonoBehaviour
     public int boostItemNumber;
     public float boostMovingTimeRatio;
     public float boostTime;
+
+    public GameObject gunPrefab;
+    public int gunItemNumber;
+    public int magazineSize;
+    public float bulletSpeed;
+    public float reloadTime;
+    public float gunTime;
+    
     public float itemCreateCycle;
     public float itemDestroyTime;
 
@@ -30,6 +38,7 @@ public class ItemEvent : MonoBehaviour
 
         if ( itemTimer > itemCreateCycle )
         {
+            int itemNumber = Random.Range( 1, itemsTotal + 1);
             int clone1GridX = Random.Range( stageInfo.gridXMin, stageInfo.gridXMax + 1 );
             int clone1GridY = Random.Range( stageInfo.gridYMin, stageInfo.gridYMax + 1 );
             int clone2GridX = ( stageInfo.gridXMax - ( clone1GridX - stageInfo.gridXMin ) );
@@ -38,20 +47,38 @@ public class ItemEvent : MonoBehaviour
             float clone1Y = clone1GridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
             float clone2X = clone2GridX * stageInfo.travelPerGridX + stageInfo.gridOffsetX;
             float clone2Y = clone2GridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
-            GameObject Boost1 = Instantiate( boostPrefab, new Vector3( clone1X, clone1Y, 1 ), Quaternion.identity, transform ) as GameObject;
-            GameObject Boost2 = Instantiate( boostPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
-            BoostItemBehavior boost1Behavior = Boost1.GetComponent<BoostItemBehavior>( );
-            BoostItemBehavior boost2Behavior = Boost2.GetComponent<BoostItemBehavior>( );
-            stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
-            stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
-            boost1Behavior.myX = clone1GridX;
-            boost1Behavior.myY = clone1GridY;
-            boost2Behavior.myX = clone2GridX;
-            boost2Behavior.myY = clone2GridY;
-            Boost1.transform.localScale = new Vector2( 0.8f, 0.8f );
-            Boost2.transform.localScale = new Vector2( 0.8f, 0.8f );
+
+            if ( itemNumber == boostItemNumber )
+            {
+                GameObject Boost1 = Instantiate( boostPrefab, new Vector3( clone1X, clone1Y, 1 ), Quaternion.identity, transform ) as GameObject;
+                GameObject Boost2 = Instantiate( boostPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
+                ItemBehavior boost1Behavior = Boost1.GetComponent<ItemBehavior>( );
+                ItemBehavior boost2Behavior = Boost2.GetComponent<ItemBehavior>( );
+                stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
+                stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
+                boost1Behavior.myX = clone1GridX;
+                boost1Behavior.myY = clone1GridY;
+                boost2Behavior.myX = clone2GridX;
+                boost2Behavior.myY = clone2GridY;
+                Debug.Log( "Create Boost" );
+            }
+
+            if ( itemNumber == gunItemNumber )
+            {
+                GameObject Gun1 = Instantiate( gunPrefab, new Vector3( clone1X, clone1Y, 1 ), Quaternion.identity, transform ) as GameObject;
+                GameObject Gun2 = Instantiate( gunPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
+                ItemBehavior gun1Behavior = Gun1.GetComponent<ItemBehavior>( );
+                ItemBehavior gun2Behavior = Gun2.GetComponent<ItemBehavior>( );
+                stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
+                stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
+                gun1Behavior.myX = clone1GridX;
+                gun1Behavior.myY = clone1GridY;
+                gun2Behavior.myX = clone2GridX;
+                gun2Behavior.myY = clone2GridY;
+                Debug.Log( "Create Gun" );
+            }
+
             itemTimer = 0.0f;
-            Debug.Log( "Create Boost" );
         }
     }
 }

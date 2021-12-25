@@ -18,6 +18,10 @@ public class StageInfo : MonoBehaviour
     public float gridOffsetY;
     public float travelPerGridX;
     public float travelPerGridY;
+    public float stageXMax;
+    public float stageXMin;
+    public float stageYMax;
+    public float stageYMin;
 
     public int[ , ] objectStatus;
     
