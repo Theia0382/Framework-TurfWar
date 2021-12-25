@@ -10,7 +10,7 @@ public class ItemEvent : MonoBehaviour
 
     public GameObject boostPrefab;
     public int boostItemNumber;
-    public float boostMovingTimeRatio;
+    public float boostRatio;
     public float boostTime;
 
     public GameObject gunPrefab;
@@ -54,8 +54,8 @@ public class ItemEvent : MonoBehaviour
                 GameObject Boost2 = Instantiate( boostPrefab, new Vector3( clone2X, clone2Y, 1 ), Quaternion.identity, transform ) as GameObject;
                 ItemBehavior boost1Behavior = Boost1.GetComponent<ItemBehavior>( );
                 ItemBehavior boost2Behavior = Boost2.GetComponent<ItemBehavior>( );
-                Alpha boost1Alpha = Gun1.GetComponent<Alpha>( );
-                Alpha boost2Alpha = Gun1.GetComponent<Alpha>( );
+                Alpha boost1Alpha = Boost1.GetComponent<Alpha>( );
+                Alpha boost2Alpha = Boost2.GetComponent<Alpha>( );
                 stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
                 stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = boostItemNumber;
                 boost1Behavior.myX = clone1GridX;
@@ -74,7 +74,7 @@ public class ItemEvent : MonoBehaviour
                 ItemBehavior gun1Behavior = Gun1.GetComponent<ItemBehavior>( );
                 ItemBehavior gun2Behavior = Gun2.GetComponent<ItemBehavior>( );
                 Alpha gun1Alpha = Gun1.GetComponent<Alpha>( );
-                Alpha gun2Alpha = Gun1.GetComponent<Alpha>( );
+                Alpha gun2Alpha = Gun2.GetComponent<Alpha>( );
                 stageInfo.objectStatus[ ( clone1GridX - stageInfo.gridXMin ) * 2, ( clone1GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
                 stageInfo.objectStatus[ ( clone2GridX - stageInfo.gridXMin ) * 2, ( clone2GridY - stageInfo.gridYMin ) * 2 ] = gunItemNumber;
                 gun1Behavior.myX = clone1GridX;

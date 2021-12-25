@@ -23,10 +23,18 @@ public class StageInfo : MonoBehaviour
     public float stageYMax;
     public float stageYMin;
 
+    public bool start;
+    public bool end;
+
+    public int player1Score;
+    public int player2Score;
+
     public int[ , ] objectStatus;
     
     void Start( )
     {
+        start = false;
+        end = false;
         player1ScoreText = GameObject.Find( "1P Score" ).GetComponent<Text>( );
         player2ScoreText = GameObject.Find( "2P Score" ).GetComponent<Text>( );
         player1Event = GameObject.Find( "Player1" ).GetComponent<PlayerEvent>( );
@@ -44,8 +52,8 @@ public class StageInfo : MonoBehaviour
 
     void Update( )
     {
-        int player1Score = 0;
-        int player2Score = 0;
+        int player1ScoreCount = 0;
+        int player2ScoreCount = 0;
         for ( int x = 0; x < objectStatus.GetLength( 0 ); x++ )
         {
             if ( x % 2 == 1 )
@@ -56,17 +64,20 @@ public class StageInfo : MonoBehaviour
                     {
                         if( objectStatus[ x, y ] == player1Event.playerNumber )
                         {
-                            player1Score += 1;
+                            player1ScoreCount += 1;
                         }
                         if( objectStatus[ x, y ] == player2Event.playerNumber )
                         {
-                            player2Score += 1;
+                            player2ScoreCount += 1;
                         }
                     }
                 }
             }
             
         }
+        player1Score = player1ScoreCount;
+        player2Score = player2ScoreCount;
+
         player1ScoreText.text = player1Score.ToString( );
         player2ScoreText.text = player2Score.ToString( );
     }

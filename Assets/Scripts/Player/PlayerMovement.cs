@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     float travelY;
 
     public bool moving;
+    public float speedRatio;
     int playerNumber;
     float movingTimer;
     float progress;
@@ -45,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         float Y = startGridY * stageInfo.travelPerGridY + stageInfo.gridOffsetY;
         transform.position = new Vector2( X, Y );
         transform.rotation = Quaternion.Euler( 0.0f, 0.0f, 0.0f );
-
     }
 
     void Start( )
@@ -57,11 +57,12 @@ public class PlayerMovement : MonoBehaviour
 
         playerNumber = playerEvent.playerNumber;
         moving = false;
+        speedRatio = 1.0f;
     }
 
     void Update( )
     {
-        if ( playerEvent.life > 0 )
+        if ( playerEvent.life > 0 && stageInfo.start )
         {
             if ( Input.GetKey( upKey ) && gridY < stageInfo.gridYMax && !moving )
             {
@@ -105,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if ( progress < 1 )
                 {
-                    movingTimer += Time.deltaTime;
+                    movingTimer += Time.deltaTime * speedRatio;
                     progress = movingTimer / movingTime;
                     float X = startX + ( travelX * progress );
                     float Y = startY + ( travelY * progress );

@@ -52,12 +52,12 @@ public class BoostEvent : MonoBehaviour
         {
             if ( boostTimer < itemEvent.boostTime )
             {
-                playerMovement.movingTime = playerMovingTime * itemEvent.boostMovingTimeRatio;
+                playerMovement.speedRatio = itemEvent.boostRatio;
             }
             else
             {
                 boost = false;
-                playerMovement.movingTime = playerMovingTime;
+                playerMovement.speedRatio = 1.0f;
                 Debug.Log( $"{playerNumber}P Boost End" );
             }
 
